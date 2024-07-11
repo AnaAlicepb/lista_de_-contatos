@@ -1,11 +1,11 @@
 // src/components/ContactList.jsx
-import React from 'react'
-import { useSelector } from 'react-redux'
-import ContactItem from './ContactItem'
-import { ListContainer, ContactItemWrapper } from '../styles/ContactListStyles'
+import React from 'react';
+import { useSelector } from 'react-redux';
+import ContactItem from './ContactItem';
+import { ListContainer, ContactItemWrapper } from '../styles/ContactListStyles';
 
 const ContactList = () => {
-  const contacts = useSelector(state => state.contacts)
+  const contacts = useSelector(state => state.contacts);
 
   return (
     <ListContainer>
@@ -15,7 +15,7 @@ const ContactList = () => {
         </ContactItemWrapper>
       ))}
     </ListContainer>
-  )
-}
+  );
+};
 
-export default ContactList
+export default ContactList;

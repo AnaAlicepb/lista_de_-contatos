@@ -1,10 +1,10 @@
-// src/styles/ContactListStyles.js
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
-
+  height: 400px; /* Defina a altura máxima do contêiner */
+  overflow-y: scroll; /* Habilita a rolagem vertical */
 
   @media (min-width: 576px) {
     flex-direction: row;
@@ -16,7 +16,7 @@ export const ListContainer = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
   }
-`
+`;
 
 export const ContactItemWrapper = styled.div`
   flex: 1 1 100%;
@@ -30,4 +30,4 @@ export const ContactItemWrapper = styled.div`
     flex: 1 1 30%;
     margin: 1%;
   }
-`
+`;
