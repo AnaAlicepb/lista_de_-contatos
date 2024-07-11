@@ -1,18 +1,24 @@
+// ContactItem.jsx
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { removeContact, editContact } from '../redux/reducers';
-import { Item, Button, TextContainer, ButtonContainer, Image, } from '../styles/ContactItemStyles';
+import { Item, Button, TextContainer, ButtonContainer, Image } from '../styles/ContactItemStyles';
 
-const femaleSuffixes = ['a', 'e', 'ia', 'la', 'ra', 'na'];
+const femaleSuffixes = ['a', 'ia', 'la', 'ra', 'na'];
 const maleSuffixes = ['o', 'os', 'es', 'io', 'or'];
+
+// Função para capitalizar o nome
+const capitalizeName = (name) => {
+  return name.replace(/\b\w/g, (char) => char.toUpperCase());
+};
 
 const getImageByGender = (name) => {
   const lowerName = name.toLowerCase();
 
-  if (femaleSuffixes.some(suffix => lowerName.endsWith(suffix))) {
-    return '/images/menina.jpg';
-  } else if (maleSuffixes.some(suffix => lowerName.endsWith(suffix))) {
+  if (maleSuffixes.some(suffix => lowerName.endsWith(suffix))) {
     return '/images/menino.jpg';
+  } else if (femaleSuffixes.some(suffix => lowerName.endsWith(suffix))) {
+    return '/images/menina.jpg';
   } else {
     return '/images/outro.png'; // Imagem padrão caso o nome não corresponda aos sufixos
   }
@@ -31,7 +37,9 @@ const ContactItem = ({ contact }) => {
     const newPhone = prompt('Novo telefone:', contact.phone);
 
     if (newName && newEmail && newPhone) {
-      dispatch(editContact({ ...contact, name: newName, email: newEmail, phone: newPhone }));
+      // Capitalizando o nome antes de editar
+      const capitalizedName = capitalizeName(newName);
+      dispatch(editContact({ ...contact, name: capitalizedName, email: newEmail, phone: newPhone }));
     }
   };
 
