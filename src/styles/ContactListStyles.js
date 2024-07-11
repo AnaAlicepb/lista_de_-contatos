@@ -3,19 +3,11 @@ import styled from 'styled-components';
 export const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 400px; /* Defina a altura máxima do contêiner */
-  overflow-y: scroll; /* Habilita a rolagem vertical */
-
-  @media (min-width: 576px) {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  @media (min-width: 768px) {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
+  max-height: 400px; /* Altura máxima do contêiner */
+  overflow-y: auto; /* Habilita a rolagem vertical apenas quando necessário */
+  padding: 10px; /* Adiciona padding interno */
+  border: 1px solid #ddd; /* Define a borda */
+  border-radius: 5px; /* Adiciona bordas arredondadas */
 `;
 
 export const ContactItemWrapper = styled.div`

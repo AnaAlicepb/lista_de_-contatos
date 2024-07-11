@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle, keyframes } from 'styled-components';
 
-// Definindo a animação para a transição de preto
+
 const blackTransition = keyframes`
   0% {
     background-color: #000000; /* Preto profundo */
@@ -23,7 +23,7 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: "Poppins";
-    animation: ${blackTransition} 40s infinite; /* Animação mais lenta */
+    animation: ${blackTransition} 30s infinite;
   }
 `;
 
