@@ -5,6 +5,7 @@ export const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
 
+
   @media (min-width: 576px) {
     flex-direction: row;
     flex-wrap: wrap;
